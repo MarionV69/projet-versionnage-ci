@@ -1,0 +1,16 @@
+:root{
+    --primary-collor:#fff;
+    --secondary-color:#000;
+    --card-background:#f0eded;
+    --border-radius:5px;
+    --background-button-carrousel:#1c81d3;
+
+}
+body{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:var(--primary-collor);
+    color:var(--secondary-color);
+}
