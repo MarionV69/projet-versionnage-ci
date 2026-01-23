@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 
-interface slides {
-  imageUrl: string;
-  text ?: string;
-}
+
 interface CarouselProps {
   images: string[];
 }
