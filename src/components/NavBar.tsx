@@ -6,13 +6,13 @@ function NavBar() {
   return (
     <nav className="nav-bar">
       <Link to="/">
-        <img src={logo} alt="Logo" />
+        <img src={logo} alt="Logo" width={100} />
       </Link>
       <div className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/contact">Contact</Link>
       </div>
-      <CircleUser size={40} />
+      <CircleUser size={25} />
     </nav>
   );
 }
