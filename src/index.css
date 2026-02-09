@@ -73,3 +73,12 @@ body{
   text-decoration: none;
   font-size: 1.5rem;
 }
+/*Maps section*/
+.map-container {
+  width: 100%;
+  height: 600px;
+  background-image: url("../src/assets/map.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
