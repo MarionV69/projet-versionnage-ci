@@ -1,5 +1,5 @@
 import HeroSection from "../components/HeroSection";
-import Map from "../components/Map";
+import Map from "../components/MapTemp";
 function HomePage() {
   return (
      <><HeroSection images={[
@@ -7,7 +7,7 @@ function HomePage() {
       "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Hero-Model-3-Standard-Desktop-EMEA.jpg"
     ]} /><Map />
     </>
-mv src/components/Map.tsx src/components/MapTemp.tsx
+
   );
 }
 export default HomePage;
