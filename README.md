@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+# Projet Tesla – Git Flow & CI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description du projet
 
-Currently, two official plugins are available:
+Ce projet est un mini projet web basé sur le site de Tesla et réalisé dans le cadre du TP d'évaluation **Git professionnel & Intégration Continue**.  
+L’objectif principal était la **mise en œuvre d’une organisation Git professionnelle**, en binôme, avec un workflow **Git Flow complet** et une **CI fonctionnelle**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Le projet consiste en un site web simple comprenant :
 
-## React Compiler
+- 2 pages: une page Home et une page Contact
+- une structure claire avec header / contenu / footer
+- deux **sections complexes** (carrousel de la hero section et formulaire de contact)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Membres du binôme
 
-## Expanding the ESLint configuration
+- Yannick NOAH OLINGA
+- Marion Vieillard
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Inspiration: lien vers le site Tesla
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+https://www.tesla.com/fr_fr
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Git flow et CI
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Après avoir créer les branches main et develop, nous avons créé 8 issues dans Github et nous les sommes assignées.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Les branches feature ont toutes été crée à partir de la branche develop en respectant la convention de nommage, convention que nous avons également appliquée pour les messages de commits de sorte que branches, commits et issues soient liées.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Hormis une erreur de PR au démarrage (basée sur main au lieu de develop), toutes les fonctionnalités ont été intégrées via une PR vers `develop` après validation par le partenaire.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Nous avons pu mettre en place la CI rapidement et avons corrigé une erreur de lint (unused vars) et des erreurs de build (liées à de mauvais imports) au cours du développement.
+
+## Utilisation du stash
+
+En cours de développement sur la branche feature/7-contact-form, nous avons utilisé git stash pour pouvoir corriger les styles css de la navbar (taille du logo et de l'icone et font-size des liens).
+
+- Commandes utilisées pour le stash: `git stash push -m “form contact styles”` puis `git stash list`.
+- Basculement sur branche fix/14-navbar-css-styles, correction des styles de la navbar, ajout, commit et push.
+- Retour sur la branche feature/7-contact-form, application du stash avec `git stash apply` puis suppression avec `git stash drop`.
+
+NB: voir captures d'écran de ces étapes
+
+## Résolution du conflit
+
+Un premier conflit Git a été volontairement provoqué et résolu:
+- travail sur **deux branches feature distinctes** (`feature/6-map-section` et `feature/7-contact-form`)
+- modification du même fichier **index.css**
+- apparition d’un **conflit lors du merge** dans `develop`
+
+Le conflit a été résolu manuellement sur GitHub et validé par un commit explicite (fix: resolve merge conflict in index.css)
+
+NB: voir capture d'écran de la résolution du conflit
+
+## Branche de release et tag
+
+- Création d'une branche release/1.0.0
+- Commit sur cette branche pour corriger l'espace entre la Hero Section et la Map Section
+- Fusion par PR sur main et PR sur develop
+- Création d'un tag annoté: `git tag -a v1.0.0 -m "Version 1.0.0 release"`
+- Push du tag vers le dépôt distant: `git push origin v1.0.0`
