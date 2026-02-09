@@ -1,7 +1,7 @@
 
 import "../../src/index.css";
 
-const MapComponent = () => {
+const Map = () => {
  
 
   return (
@@ -11,4 +11,4 @@ const MapComponent = () => {
   );
 };
 
-export default MapComponent;
+export default Map;
