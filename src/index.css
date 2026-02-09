@@ -84,8 +84,20 @@ button:hover {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
-
+.big_div{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+.roaster{
+  width: 300px;
+  height: 200px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  justify-content: center;
+  position:fixed;
+}
 /* Contact Form Styles */
 .contact-page {
   padding: 18px;
@@ -154,7 +166,9 @@ button:hover {
   border-radius: 4px;
   cursor: pointer;
 }
-
+.big_div{
+  margin-top: -150px;
+}
 .contact-button:hover {
   background-color: #222;
 }
