@@ -20,6 +20,10 @@ Le projet consiste en un site web simple comprenant :
 
 https://www.tesla.com/fr_fr
 
+## Dossier captures d'écrans
+
+Toutes les captures sont dans le dossier `CAPTURES_ECRAN` à la racine du projet (notre site, stash, conflit)
+
 ## Git flow et CI
 
 Après avoir créé les branches `main` et `develop`, nous avons créé 8 issues sur Github et nous les sommes assignées.
@@ -29,6 +33,7 @@ Les branches `feature` ont toutes été crées à partir de la branche `develop`
 Hormis une erreur de pull request au démarrage (basée sur `main` au lieu de `develop`), toutes les fonctionnalités ont été intégrées via une PR vers `develop` après validation par le partenaire.
 
 Nous avons pu mettre en place la CI rapidement et corrigé :
+
 - une erreur de lint (variables inutilisées)
 - des erreurs de build liées à des imports incorrects
 
@@ -45,6 +50,7 @@ NB: voir captures d'écran de ces étapes.
 ## Résolution du conflit
 
 Un premier conflit Git a été volontairement provoqué et résolu:
+
 - travail sur deux branches feature distinctes (`feature/6-map-section` et `feature/7-contact-form`)
 - modification du même fichier index.css
 - apparition d’un conflit lors du merge dans `develop`
